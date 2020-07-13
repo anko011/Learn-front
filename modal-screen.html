@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/log-reg-form/favicon.svg" type="image/svg">
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Modak&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/log-reg-form/design.css">
+    <link rel="stylesheet" href="css/modal-screen/modal-screen-css.css">
+
+    <title>Froggy Life</title>
+
+
+</head>
+<body>
+
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <div class="row w-100">
+        <div class="col-12 text-center">
+            <img class="img-fluid" src="img/modal-screen/modal-screen.jpg"/>
+        </div>
+    </div>
+    <div class="row w-100 justify-content-center">
+        <div class="col-12 col-md-8  text-center">
+
+
+            <button type="button" class="btn-block btn-primary" onclick="setClassDisplayImage('xl')" data-toggle="modal" data-target="#modal-screen" data-size="xl">
+                Модальное окно XL
+            </button>
+
+            <button type="button" class="btn-block btn-danger" onclick="setClassDisplayImage('lg')" data-toggle="modal" data-target="#modal-screen" data-size="lg">
+                Модальное окно LG
+            </button>
+
+            <button type="button" class="btn-block btn-success" onclick="setClassDisplayImage('sm')" data-toggle="modal" data-target="#modal-screen" data-size="md">
+                Модальное окно SM
+            </button>
+
+
+            <div class="modal fade" id="modal-screen" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered my-0" id="modal-dialog">
+
+                    <!-- Содержимое модального окна -->
+                    <div class="modal-content ">
+                        <div class="modal-body p-0">
+                            <!-- Вставка формы -->
+                            <div class="container-fluid">
+                                <div class="row ">
+
+                                    <div class="col form-block text-center py-5 px-0">
+
+                                        <!-- Имя бренда -->
+                                        <span class="brand_name text-uppercase">Froggy</span>
+
+                                        <!-- Вкладки -->
+                                        <ul class="nav nav-justified justify-content-center my-3">
+                                            <li class="nav-element">
+                                                <a href="#auth-block" class="nav-link active" data-toggle="tab" aria-controls="block-auth">Авторизация</a>
+                                            </li>
+                                            <li class="nav-element">
+                                                <a href="#reg-block" class="nav-link" data-toggle="tab" aria-controls="block-reg">Регистрация</a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- Контент -->
+                                        <div class="tab-content">
+
+                                            <!-- Авторизация -->
+                                            <div class="tab-pane fade show active auth-pane" id="auth-block">
+                                                <form action="" novalidate>
+
+                                                    <div class="form-row justify-content-center">
+
+                                                        <!-- Поле email авторизации -->
+                                                        <div class="form-group col-8 text-left">
+                                                            <input type="email" class="form-control form-input" id="input-email-auth" aria-describedby="subtext-input-email-auth" placeholder="Введите e-mail" required>
+                                                            <small id="subtext-input-email-auth" class="form-text"></small>
+                                                        </div>
+
+                                                        <!-- Поле pass авторизации  -->
+                                                        <div class="form-group col-8 text-left">
+
+                                                            <input type="password" class="form-control form-input" id="input-pass-auth" aria-describedby="subtext-input-pass-auth" placeholder="Введите пароль" required>
+                                                            <small id="subtext-input-pass-auth" class="form-text text-muted"></small>
+                                                        </div>
+
+                                                        <!-- Checkbox remember авторизации -->
+                                                        <div class="form-group col-8 text-left">
+                                                            <label class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="input-checkbox-auth">
+                                                                <span class="custom-control-indicator form-checkbox-indicator"></span>
+                                                                <span class="custom-control-description form-checkbox-description">Запомнить меня</span>
+                                                                <small id="subtext-input-checkbox-auth" class="form-text"></small>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Кнопка входа -->
+                                                    <input type="submit" value="Вход" class="btn btn-form" id="input-submit-auth">
+
+                                                </form>
+                                            </div>
+
+                                            <!-- Регистрация -->
+                                            <div class="tab-pane fade reg-pane" id="reg-block">
+
+                                                <form action="" novalidate>
+
+                                                    <div class="form-row justify-content-center">
+                                                        <!-- Поле login регистрации -->
+                                                        <div class="form-group col-8 text-left">
+                                                            <input type="text" class="form-control form-input" id="input-login-reg" aria-describedby="subtext-input-login-reg" data-rule="login-reg" placeholder="Придумайте логин" required>
+                                                            <small id="subtext-input-login-reg" class="form-text text-muted">Логин должен состоять из символов "a-z", "A-Z", и цифр "1-9" </small>
+                                                        </div>
+
+                                                        <!-- Поле email регистрации -->
+                                                        <div class="form-group col-8 text-left">
+                                                            <input type="email" class="form-control form-input" id="input-email-reg" aria-describedby="subtext-input-email-reg" placeholder="Введите e-mail" required>
+                                                            <small id="subtext-input-email-reg" class="form-text text-muted">На e-mail придет письмо, содержащее ссылку для подтверждения адреса</small>
+                                                        </div>
+
+                                                        <!-- Поле pass регистрации -->
+                                                        <div class="form-group col-8 text-left">
+                                                            <input type="password" class="form-control form-input" id="input-pass-reg" aria-describedby="subtext-input-pass-reg" placeholder="Придумайте пароль" required>
+                                                            <small id="subtext-input-pass-reg" class="form-text text-muted">Пароль должен содержать символы "a-z", "A-Z", и цифры "1-9" </small>
+                                                        </div>
+
+                                                        <!-- Checkbox политики регистрация -->
+                                                        <div class="form-group col-8 text-left">
+                                                            <label class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="input-checkbox-reg" required>
+                                                                <span class="custom-control-indicator form-checkbox-indicator"></span>
+                                                                <span class="custom-control-description form-checkbox-description">Я принимаю правила радужного флага</span>
+                                                                <small id="subtext-input-checkbox-reg" class="form-text text-muted"></small>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Кнопка регистрации -->
+                                                    <input type="submit" value="Регистрация" class="btn btn-form" id="input-submit-reg">
+
+                                                </form>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col d-none d-lg-flex image-block p-0" id="img-block"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+    <!-- Модальное окно -->
+
+
+    <script src="js/modal-screen/script-modal.js"></script>
+    <script src="js/log-reg-form/validation.js"></script>
+    <script src="js/JQuery/JQuery.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>
+</body>
+</html>
